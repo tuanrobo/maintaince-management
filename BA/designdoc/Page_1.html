@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Page 1</title>
+  <script type="text/javascript">
+  window.onload = function() {
+    // Active menu section
+    var active = document.getElementsByTagName('body')[0];
+    if(active.dataset.active) {
+      var activeMenu = document.getElementById(active.dataset.active);
+      activeMenu.classList.add("active");
+    }
+
+    // Hide images if they are 1px height
+    var guideImages = document.getElementsByClassName('guide-image');
+    for(i=0; i<guideImages.length; i++) {
+      if(guideImages[i].clientHeight <= 2) {
+        guideImages[i].parentNode.classList.add("hide");
+      }
+    }
+  }
+</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="assets/style.css" media="all" rel="stylesheet" />
+</head>
+<body data-active="page_1-page_1">
+  <nav role="navigation" id="main-nav">
+  <header class="logo">
+  
+  </header>
+  <ul>
+    
+      <li id="page_1-page_1">
+        <a href="Page_1.html">Page 1</a>
+        <ol>
+          
+            <li>
+              <a href="Page_1.html#page_1-artboard" class="">Artboard</a>
+            </li>
+          
+        </ol>
+      </li>
+    
+  </ul>
+</nav>
+  <article id="content">
+    <header id="main">
+  <h1>Page 1</h1>
+  
+</header>
+
+    
+<section class="artboard" id="page_1-artboard">
+  
+  <header>
+    <h2>Artboard</h2>
+  </header>
+  
+  <section class="image">
+    <img src="img/page_1-artboard.png" class="retina-image guide-image">
+  </section>
+  
+</section>
+
+  </article>
+</body>
+</html>
