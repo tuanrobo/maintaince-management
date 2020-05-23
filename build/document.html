@@ -8,17 +8,14 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body class="d-flex flex-column">
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"><a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Dropfoods Maintenance System</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap text-muted">V.1.0</li>
-      </ul>
-    </nav>
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"><a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Dropfoods MS</a>
+        </nav>
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="sidebarMenu">
           <div class="sidebar-sticky pt-3">
-            <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical"><a class="nav-link active" data-toggle="pill" href="#introduction" role="tab" aria-selected="true">Introduction</a><a class="nav-link" data-toggle="pill" href="#expectation" role="tab" aria-selected="false">Expectation</a>
+            <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">COLLECT REQUIREMENT</h6><a class="nav-link active" data-toggle="pill" href="#introduction" role="tab" aria-selected="true">Introduction</a><a class="nav-link" data-toggle="pill" href="#expectation" role="tab" aria-selected="false">Expectation</a>
             </div>
           </div>
         </nav>
@@ -30,22 +27,30 @@
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Overview</h1>
                           </div>
-                      <p class="lead">Để đáp ứng các bộ phận kỹ thuật bán hàng tự động và giải quyết nhu cầu như: <strong class="font-weight-bold">sửa chữa, nâng cấp, bảo trì về các thiết bị phần cứng của máy bán hàng tự động</strong>. Chúng tôi phân tích và cung cấp các giải pháp để tạo ra các công cụ hỗ trợ bộ phận kỹ thuật để giải quyết các vấn đề trên.</p>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <p class="lead">Để đáp ứng các bộ phận kỹ thuật bán hàng tự động và giải quyết nhu cầu như: <strong class="font-weight-bold">sửa chữa, nâng cấp, bảo trì về các thiết bị phần cứng của máy bán hàng tự động</strong>. Chúng tôi phân tích và cung cấp các giải pháp để tạo ra các công cụ hỗ trợ bộ phận kỹ thuật để giải quyết các vấn đề trên.</p>
+                        </div>
+                      </div>
                     </div>
                     <div class="tab-pane fade show active" role="tabpanel" id="expectation">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Expectation (Requirement draft from @Tin)</h1>
                           </div>
-                      <div class="row">
+                      <div class="row mb-5">
                         <div class="col-lg-6">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Input system for spare parts management</h2>
-                              </div>
-                          <p class="lead">Input parts list with quantity.</p>
-                          <p class="lead">Each time Technician completes replace a part, he will confirm on Maintenance function on the machine. </p>
-                          <p class="lead">And the machine push this information to server. </p>
-                          <p class="lead">The server auto decreases quantity of this part on server and records it. </p>
-                          <p class="lead">At the same time, ID machine/time done /ID of Technician to server.</p>
+                          <div class="card">
+                            <div class="card-body">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Spare parts management</h2>
+                                  </div>
+                              <p class="lead">Input parts list with quantity.</p>
+                              <p class="lead">Each time Technician completes replace a part, he will confirm on Maintenance function on the machine. </p>
+                              <p class="lead">And the machine push this information to server. </p>
+                              <p class="lead">The server auto decreases quantity of this part on server and records it. </p>
+                              <p class="lead">At the same time, ID machine/time done /ID of Technician to server.</p><a class="btn btn-outline-primary m-3" href="index.html" role="button">Launch Demo</a>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="text-muted">
@@ -59,28 +64,31 @@
                           </div>
                         </div>
                       </div>
-                      <hr>
-                      <div class="row">
+                      <div class="row mb-5">
                         <div class="col-lg-6">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Monitoring dashboard</h2>
-                              </div>
-                          <ol class="lead"> 
-                            <li>Note jam</li>
-                            <li>Temperature inside the cabinet</li>
-                            <li>Door Status</li>
-                            <li>Slot broke</li>
-                            <li>Network status</li>
-                            <li>Maintenance Status(What machine need to clean Bill Validator clean Cooling system on next month...), </li>
-                            <li>System status</li>
-                          </ol>
-                          <p class="lead">Notification alert needs to push for Technician group:</p>
-                          <ol class="lead">
-                            <li>Note Jam</li>
-                            <li>Door Status</li>
-                            <li>Lost connection between machine and server more than xx hours</li>
-                            <li>Temperature inside the cabinet above xxx</li>
-                          </ol>
+                          <div class="card">
+                            <div class="card-body">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Monitoring dashboard</h2>
+                                  </div>
+                              <ol class="lead"> 
+                                <li>Note jam</li>
+                                <li>Temperature inside the cabinet</li>
+                                <li>Door Status</li>
+                                <li>Slot broke</li>
+                                <li>Network status</li>
+                                <li>Maintenance Status(What machine need to clean Bill Validator clean Cooling system on next month...), </li>
+                                <li>System status</li>
+                              </ol>
+                              <p class="lead">Notification alert needs to push for Technician group:</p>
+                              <ol class="lead">
+                                <li>Note Jam</li>
+                                <li>Door Status</li>
+                                <li>Lost connection between machine and server more than xx hours</li>
+                                <li>Temperature inside the cabinet above xxx</li>
+                              </ol>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="text-muted">
@@ -106,24 +114,27 @@
                           </div>
                         </div>
                       </div>
-                      <hr>
-                      <div class="row">
+                      <div class="row mb-5">
                         <div class="col-lg-6">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Statistics</h2>
-                              </div>
-                          <p class="lead">Record database about:</p>
-                          <ol class="lead"> 
-                            <li>Note jam</li>
-                            <li>Slot broke, any problem affect to sale. </li>
-                          </ol>
-                          <p class="lead">This information statistic help us predict what are spare parts more broken. Record date-time after maintenance machine (After Clean Bill Validator or Clean Cooling system).</p>
+                          <div class="card">
+                            <div class="card-body">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Statistics</h2>
+                                  </div>
+                              <p class="lead">Record database about:</p>
+                              <ol class="lead"> 
+                                <li>Note jam</li>
+                                <li>Slot broke, any problem affect to sale. </li>
+                              </ol>
+                              <p class="lead">This information statistic help us predict what are spare parts more broken. Record date-time after maintenance machine (After Clean Bill Validator or Clean Cooling system).</p>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-lg-6 text-muted">
                               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                                 <h2 class="h3">Thống kê</h2>
                               </div>
-                          <p class="lead">Ghi nhận dữ liệu về các vấn đề:</p>
+                          <p class="lead">Ghi nhận các vấn đề:</p>
                           <ol class="lead"> 
                             <li>Kẹt tiền</li>
                             <li>Hỏng khay</li>
@@ -132,17 +143,20 @@
                           <p class="lead">Hệ thống thông kê giúp cho việc dự đoán các loại linh kiện/vật tư có khả năng hư hỏng. Ghi nhận lại thời gian bảo trì máy.</p>
                         </div>
                       </div>
-                      <hr>
-                      <div class="row">
+                      <div class="row mb-5">
                         <div class="col-lg-6">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Machine settings remotes</h2>
-                              </div>
-                          <p class="lead">Some parameters we can set on the server-side and sync to the machine without going to the machine and set on the machine. Example: Temperature limit, the domination of the Bill validator can accept (we already have this function on our server), the time turn on/turn off the light, and LCD screen.</p>
+                          <div class="card">
+                            <div class="card-body">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Machine settings remotes</h2>
+                                  </div>
+                              <p class="lead">Some parameters we can set on the server-side and sync to the machine without going to the machine and set on the machine. Example: Temperature limit, the domination of the Bill validator can accept (we already have this function on our server), the time turn on/turn off the light, and LCD screen.</p>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-lg-6 text-muted">
                               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Cấu hình thông số cho các máy bán hàng từ xa</h2>
+                                <h2 class="h3">Cấu hình máy bán hàng từ xa</h2>
                               </div>
                           <p class="lead">Một hệ thống để nhân viên có thể cấu hình máy từ xa mà ko cần đến nới đặt máy thủ công nhằm tiết kiệm thời gian và công sức. Ví dụ: Cần điểu chỉnh lại nhiệt độ máy, hiệu chỉnh lại mệnh giá (Đã có sẵn trên hệ thống), thời gian tắt/mở đèn và màn hình LCD</p>
                         </div>
