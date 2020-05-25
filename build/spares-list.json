@@ -1,0 +1,242 @@
+[
+  {
+    "Code": "M001",
+    "English": "Slide tray rail for the Machine Door"
+  },
+  {
+    "Code": "M002_5",
+    "English": "Spiral Springs capacity 5"
+  },
+  {
+    "Code": "M002_4",
+    "English": "Spiral Springs capacity 4"
+  },
+  {
+    "Code": "M002_6",
+    "English": "Spiral Springs capacity 6"
+  },
+  {
+    "Code": "M002_7",
+    "English": "Spiral Springs capacity 7"
+  },
+  {
+    "Code": "M002_11",
+    "English": "Spiral Springs capacity 11"
+  },
+  {
+    "Code": "M002_15",
+    "English": "Spiral Springs capacity 15"
+  },
+  {
+    "Code": "M003",
+    "English": "Plastic ring hold the Spring"
+  },
+  {
+    "Code": "M004",
+    "English": "Small springs on the back of slot"
+  },
+  {
+    "Code": "M005",
+    "English": "Plastic wheel tray support"
+  },
+  {
+    "Code": "M008",
+    "English": "Wheel"
+  },
+  {
+    "Code": "M010_T",
+    "English": "T-handle Lock MK200"
+  },
+  {
+    "Code": "M010_D",
+    "English": "Brass Vending Machine Lock MK213"
+  },
+  {
+    "Code": "M011",
+    "English": "The Glass Door with heating for new machines"
+  },
+  {
+    "Code": null,
+    "English": "The Glass Door with heating  for old machines"
+  },
+  {
+    "Code": "M012",
+    "English": "Yellow Arrow"
+  },
+  {
+    "Code": "EA01",
+    "English": "ELCB- Earth Leakage Circuit Breaker"
+  },
+  {
+    "Code": null,
+    "English": "Power cord with Earth Leakage Circuit Breaker"
+  },
+  {
+    "Code": "EA02",
+    "English": "Switch"
+  },
+  {
+    "Code": "EA03",
+    "English": "Relay 12V"
+  },
+  {
+    "Code": "EA04",
+    "English": "Timer Control LCD"
+  },
+  {
+    "Code": "EA05",
+    "English": "Fuse"
+  },
+  {
+    "Code": "EA06_5A",
+    "English": "Power Supply 12V-5A"
+  },
+  {
+    "Code": "EA06_1A",
+    "English": "Power Supply 12V-1A"
+  },
+  {
+    "Code": "EA07_6.5A",
+    "English": "Power Supply 24V-6.5A "
+  },
+  {
+    "Code": "EA07_4A",
+    "English": "Power Supply 24V-4A "
+  },
+  {
+    "Code": "EA08",
+    "English": "Industrial Router 4G"
+  },
+  {
+    "Code": "EA09_VGA",
+    "English": "VGA cable"
+  },
+  {
+    "Code": "EA09_HDMI",
+    "English": "HDMI Cable"
+  },
+  {
+    "Code": "EA10_P",
+    "English": "Auxiliary Cabinet Power Cord "
+  },
+  {
+    "Code": "EA10_C",
+    "English": "Comunication Line"
+  },
+  {
+    "Code": "EA11_A",
+    "English": "Drive Board cable (for new machines)"
+  },
+  {
+    "Code": "EA11_S",
+    "English": "Drive Board cable (for old machines)"
+  },
+  {
+    "Code": "EA12",
+    "English": "Ethernet Cable"
+  },
+  {
+    "Code": "EA13",
+    "English": "RS232 to TTL cable for NV11"
+  },
+  {
+    "Code": "EA14_11",
+    "English": "Bill Acceptor NV11"
+  },
+  {
+    "Code": "EA15",
+    "English": "Recycler Note Float for NV11"
+  },
+  {
+    "Code": "EA16",
+    "English": "LED light bar 24VDC"
+  },
+  {
+    "Code": "EC01",
+    "English": "LCD Screen 32 inches FHD"
+  },
+  {
+    "Code": null,
+    "English": "LCD Screen 49 inches FHD"
+  },
+  {
+    "Code": "EC01_P",
+    "English": "Power Supply board for LCD 32 inches  "
+  },
+  {
+    "Code": "EC01_C",
+    "English": "Control board for LCD 32 inches"
+  },
+  {
+    "Code": "EC02",
+    "English": "Mini PC (Windows platform)"
+  },
+  {
+    "Code": "EC02_M",
+    "English": "Main board for mini PC"
+  },
+  {
+    "Code": "EC02_R ",
+    "English": "Ram for mini PC"
+  },
+  {
+    "Code": "EC02_S",
+    "English": "SSD mSata for mini PC"
+  },
+  {
+    "Code": "EC02_F",
+    "English": "CPU fan for mini PC"
+  },
+  {
+    "Code": "EC03",
+    "English": "Master Board "
+  },
+  {
+    "Code": "EC04_T",
+    "English": "Drive Board "
+  },
+  {
+    "Code": "EC07",
+    "English": "Drop Sensor"
+  },
+  {
+    "Code": "EC08",
+    "English": "IR Touch Screen 32 inches"
+  },
+  {
+    "Code": null,
+    "English": "IR Touch Screen 49 inches"
+  },
+  {
+    "Code": "C001",
+    "English": "Compressor"
+  },
+  {
+    "Code": "C002",
+    "English": "Radiator Fan"
+  },
+  {
+    "Code": "C003",
+    "English": "Cooling Fan"
+  },
+  {
+    "Code": "C004",
+    "English": "Radiator for cooler"
+  },
+  {
+    "Code": "C005",
+    "English": "Radiator"
+  },
+  {
+    "Code": "C006",
+    "English": "Temperature Controller"
+  },
+  {
+    "Code": "C007",
+    "English": "Temperature Sensor (Thermostat)"
+  },
+  {
+    "Code": "C008",
+    "English": "Whole Cooling Block"
+  }
+]

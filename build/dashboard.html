@@ -31,7 +31,7 @@
               <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade" role="tabpanel" id="mainDashboard">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Monitoring</h1>
+                            <h1 class="h2">VM Monitoring</h1>
                           </div>
                       <div class="row">
                         <div class="col-12 mb-3">
@@ -55,17 +55,26 @@
                                   <th>#</th>
                                   <th> 
                                     <select>
-                                      <option>VM</option>
+                                      <option>VM(High Risk)</option>
                                       <option>M001</option>
                                       <option>M002</option>
                                       <option>M003</option>
                                       <option>Mxxx</option>
                                     </select>
                                   </th>
-                                  <th>Location</th>
                                   <th> 
                                     <select>
-                                      <option>Status</option>
+                                      <option>Location(All)</option>
+                                      <option>Citilight, Phường Đakao, Q.1</option>
+                                      <option>VUS Q.1</option>
+                                      <option>VUS Q.3</option>
+                                      <option>VUS Q.5</option>
+                                      <option>xxx</option>
+                                    </select>
+                                  </th>
+                                  <th> 
+                                    <select>
+                                      <option>Status(All)</option>
                                       <option>Normal</option>
                                       <option>Note Jam</option>
                                       <option>Disconnected</option>
@@ -73,33 +82,138 @@
                                     </select>
                                   </th>
                                   <th>Detection Date</th>
-                                  <th></th>
+                                  <th>
+                                    <select>
+                                      <option>Assignment(Not assign yet)</option>
+                                      <option>Assigned                </option>
+                                    </select>
+                                  </th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="table-success">
+                                <tr class="table-danger">
                                   <td>1</td>
                                   <td>M001</td>
                                   <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Normal</td>
+                                  <td class="text-danger font-weight-bold">Door is opening</td>
                                   <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket</a></td>
+                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
                                 </tr>
                                 <tr class="table-danger">
                                   <td>2</td>
                                   <td>M003</td>
                                   <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Note Jam</td>
+                                  <td class="text-danger font-weight-bold">Note Jam</td>
                                   <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket</a></td>
+                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
                                 </tr>
                                 <tr class="table-danger">
                                   <td>3</td>
                                   <td>M005</td>
                                   <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>disconnected</td>
+                                  <td class="text-danger font-weight-bold">disconnected</td>
                                   <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket</a></td>
+                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
+                                </tr>
+                                <tr class="table-danger">
+                                  <td>4</td>
+                                  <td>M005</td>
+                                  <td>Citilight, Phường Đakao, Q.1</td>
+                                  <td class="text-danger font-weight-bold">Temperature[High risk]</td>
+                                  <td>16:34PM - 20/06/2020</td>
+                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
+                                </tr>
+                                <tr class="table-danger">
+                                  <td>5</td>
+                                  <td>M005</td>
+                                  <td>Citilight, Phường Đakao, Q.1</td>
+                                  <td class="text-danger font-weight-bold">Error purchase by App [Moca]</td>
+                                  <td>16:34PM - 20/06/2020</td>
+                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                <h2 class="h3">Tracking Tickets</h2>
+                                    <div class="btn-toolbar mb-2 mb-md-0">
+                                      <div class="btn-group">
+                                            <button class="btn btn-sm btn-outline-secondary">Normal<span class="badge badge-primary ml-2">1</span>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">Danger<span class="badge badge-danger ml-2">1</span>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">Exprired<span class="badge badge-danger ml-2">1</span>
+                                            </button>
+                                      </div>
+                                    </div>
+                              </div>
+                          <div class="table-responsive">
+                            <table class="table table-striped table-hover table-lg table-borderless">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th> 
+                                    <select>
+                                      <option>VM(High Risk)</option>
+                                      <option>M001</option>
+                                      <option>M002</option>
+                                      <option>M003</option>
+                                      <option>Mxxx</option>
+                                    </select>
+                                  </th>
+                                  <th> 
+                                    <select>
+                                      <option>Location(All)</option>
+                                      <option>Citilight, Phường Đakao, Q.1</option>
+                                      <option>VUS Q.1</option>
+                                      <option>VUS Q.3</option>
+                                      <option>VUS Q.5</option>
+                                      <option>xxx</option>
+                                    </select>
+                                  </th>
+                                  <th> 
+                                    <select>
+                                      <option>Status(All)</option>
+                                      <option>Normal</option>
+                                      <option>Note Jam</option>
+                                      <option>Disconnected</option>
+                                      <option>XXX</option>
+                                    </select>
+                                  </th>
+                                  <th>Detection Date</th>
+                                  <th>Assign to                </th>
+                                  <th>Assigned Date</th>
+                                </tr>
+                              </thead>
+                              <tbody>           
+                                <tr>
+                                  <td>3</td>
+                                  <td>M005</td>
+                                  <td>Citilight, Phường Đakao, Q.1</td>
+                                  <td class="text-danger font-weight-bold">disconnected</td>
+                                  <td>16:34PM - 20/06/2020</td>
+                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
+                                  <td>17:3PM - 20/06/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>M005</td>
+                                  <td>Citilight, Phường Đakao, Q.1</td>
+                                  <td class="text-danger font-weight-bold">Temperature[High risk]</td>
+                                  <td>16:34PM - 20/06/2020</td>
+                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
+                                  <td>17:3PM - 20/06/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>M005</td>
+                                  <td>Citilight, Phường Đakao, Q.1</td>
+                                  <td class="text-danger font-weight-bold">Error purchase by App [Moca]</td>
+                                  <td>16:34PM - 20/06/2020</td>
+                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
+                                  <td>17:3PM - 20/06/2020</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -107,7 +221,7 @@
                         </div>
                         <div class="col-12">
                               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Latest Maintenance</h2>
+                                <h2 class="h3">Maintenance status</h2>
                                 <div class="btn-toolbar mb-2 mb-md-0">
                                   <div class="btn-group mr-2">
                                     <button class="btn btn-sm btn-outline-secondary" type="button">Completed<span class="badge badge-success ml-2">1</span></button>
@@ -122,7 +236,7 @@
                                   <th>#</th>
                                   <th> 
                                     <select>
-                                      <option>VM</option>
+                                      <option>VM(All)</option>
                                       <option>M001</option>
                                       <option>M002</option>
                                       <option>M003</option>
@@ -132,7 +246,7 @@
                                   <th>Location</th>
                                   <th> 
                                     <select> 
-                                      <option>Type</option>
+                                      <option>Type(All)</option>
                                       <option>Regular Maintenance</option>
                                       <option>Repair</option>
                                       <option>Replacement</option>
@@ -144,7 +258,7 @@
                                   <th>Task Holder</th>
                                   <th> 
                                     <select> 
-                                      <option>Status</option>
+                                      <option>Status(All)</option>
                                       <option>Completed</option>
                                       <option>Pending</option>
                                       <option>xxx</option>
@@ -167,7 +281,7 @@
                                   <td>1</td>
                                   <td>M001</td>
                                   <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Repair</td>
+                                  <td>Repair<br><span class="text-muted d-block">RS232 to TTL cable for NV11</span></td>
                                   <td>16:34 PM - 20/06/2020</td>
                                   <td>08:30 AM - 21/06/2020</td>
                                   <td>Tin Nguyễn</td>
@@ -189,12 +303,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade show active" role="tabpanel" id="spare-part">
+                    <div class="tab-pane fade" role="tabpanel" id="spare-part">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Spare parts management</h1> 
                           </div>
                       <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-5">
                           <div class="card">
                             <div class="card-body">
                                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
@@ -235,7 +349,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                                 <h2 class="h3">Lastest Exported</h2>
                               </div>
@@ -250,6 +364,7 @@
                                   <th>Spare holder</th>
                                   <th>VM</th>
                                   <th>Date taken</th>
+                                  <th></th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -261,6 +376,12 @@
                                   <td>Vũ.Nguyễn</td>
                                   <td>M004</td>
                                   <td>08:30 AM - 21/06/2020</td>
+                                  <td>
+                                    <div class="list-group list-group-horizontal">
+                                      <div class="list-group-item"><a href="#">Edit</a></div>
+                                      <div class="list-group-item"><a href="#">Delete</a></div>
+                                    </div>
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td>2</td>
@@ -270,6 +391,12 @@
                                   <td>Vũ.Nguyễn</td>
                                   <td>M004</td>
                                   <td>08:30 AM - 21/06/2020</td>
+                                  <td>
+                                    <div class="list-group list-group-horizontal">
+                                      <div class="list-group-item"><a href="#">Edit</a></div>
+                                      <div class="list-group-item"><a href="#">Delete</a></div>
+                                    </div>
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -515,74 +642,117 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" role="tabpanel" id="admin-spare_part">
+                    <div class="tab-pane fade show active" role="tabpanel" id="admin-spare_part">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Spare Parts</h1>   
+                            <h1 class="h2">Spare Parts</h1>
                           </div>
-                      <div class="col-lg-6">
-                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                              <h2 class="h3">In Stocks</h2>
-                              <div class="btn-toolbar mb-2 mb-md-0">
-                                <div class="btn-group mr-2">
-                                  <button class="btn btn-sm btn-outline-secondary" type="button">New Import	</button>
+                      <div class="row">
+                        <div class="col-lg-6 mb-5 mx-auto">
+                          <div class="card">
+                            <div class="card-body">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Import new spares</h2>
+                                  </div>
+                              <form>
+                                <div class="form-row">
+                                  <div class="col-lg-6 mb-3">
+                                    <label>Spare part name</label>
+                                        <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="Spiral Springs capacity 5">
+                                  </div>
+                                  <div class="col-lg-4 mb-3">
+                                    <label>Quantity</label>
+                                        <input class="form-control" type="number" placeholder="quantity" value="1">
+                                  </div>
+                                  <div class="col-lg-2 mb-3">
+                                    <label class="invisible">remove</label>
+                                    <button class="btn btn-secondary btn-block">-</button>
+                                  </div>
                                 </div>
-                              </div>
+                                <div class="form-row">
+                                  <div class="col-lg-6 mb-3">           
+                                        <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="">
+                                  </div>
+                                  <div class="col-lg-4 mb-3">           
+                                        <input class="form-control" type="number" placeholder="quantity" value="">
+                                  </div>
+                                  <div class="col-lg-2 mb-3">           
+                                    <button class="btn btn-secondary btn-block">+</button>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label>Spare holder</label>
+                                      <input class="form-control" type="text" placeholder="Staff name" value="">
+                                </div>
+                                <div class="d-flex justify-content-between"><a class="button btn-link btn-lg" href="#">Clear</a><a class="button btn-primary btn-lg" href="#">Submit</a></div>
+                              </form>
                             </div>
-                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                          <li class="nav-item" role="presentation"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#new" role="tab" aria-selected="true">New<span class="badge badge-primary ml-3">100</span></a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#recovered" role="tab" aria-selected="false">Recovered<span class="badge badge-primary ml-3">100</span></a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#unrecoverable" role="tab" aria-selected="false">Unrecoverable<span class="badge badge-primary ml-3">100</span></a></li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                              <div class="tab-pane fade show active" role="tabpanel" id="new">
-                                <div class="table-responsive">
-                                  <table class="table table-striped table-hover table-lg table-borderless">
-                                    <thead>
-                                      <tr>
-                                        <th colspan="2">
-                                          <form>
-                                                <input class="form-control" type="text" placeholder="Enter Spare name or Code name" value="">
-                                          </form>
-                                        </th>
-                                        <th>Code</th>
-                                        <th>In Stocks</th>
-                                        <th>Last Import</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>1</td>
-                                        <td> <a href="#">Slide tray rail for the Machine Door</a></td>
-                                        <td>M001</td>
-                                        <td>100</td>
-                                        <td>10/06/2019								</td>
-                                      </tr>
-                                      <tr>
-                                        <td>2</td>
-                                        <td><a href="#">Spiral Springs capacity 5</a></td>
-                                        <td>M005</td>
-                                        <td>100</td>
-                                        <td>10/06/2019</td>
-                                      </tr>
-                                      <tr>
-                                        <td>3</td>
-                                        <td> <a href="#">Spiral Springs capacity 4</a></td>
-                                        <td>M005</td>
-                                        <td>100</td>
-                                        <td>10/06/2019</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                <h2 class="h3">In Stocks</h2>
+                                <div class="btn-toolbar mb-2 mb-md-0">
+                                  <div class="btn-group mr-2">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">New Import	</button>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="tab-pane fade" role="tabpanel" id="recovered">
-                                    <div class="alert alert-secondary">No more recovered
-                                    </div>
-                              </div>
-                              <div class="tab-pane fade" role="tabpanel" id="unrecoverable">
-                                    <div class="alert alert-secondary">Unrecoverable
-                                    </div>
-                              </div>
+                          <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#new" role="tab" aria-selected="true">New<span class="badge badge-primary ml-3">100</span></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#recovered" role="tab" aria-selected="false">Recovered<span class="badge badge-primary ml-3">100</span></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#unrecoverable" role="tab" aria-selected="false">Unrecoverable<span class="badge badge-primary ml-3">100</span></a></li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" role="tabpanel" id="new">
+                                  <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-lg table-borderless">
+                                      <thead>
+                                        <tr>
+                                          <th colspan="2">
+                                            <form>
+                                                  <input class="form-control" type="text" placeholder="Enter Spare name or Code name" value="">
+                                            </form>
+                                          </th>
+                                          <th>Code</th>
+                                          <th>In Stocks</th>
+                                          <th>Last Import</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1</td>
+                                          <td> <a href="#">Slide tray rail for the Machine Door</a></td>
+                                          <td>M001</td>
+                                          <td>100</td>
+                                          <td>10/06/2019								</td>
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td><a href="#">Spiral Springs capacity 5</a></td>
+                                          <td>M005</td>
+                                          <td>100</td>
+                                          <td>10/06/2019</td>
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td> <a href="#">Spiral Springs capacity 4</a></td>
+                                          <td>M005</td>
+                                          <td>100</td>
+                                          <td>10/06/2019</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                                <div class="tab-pane fade" role="tabpanel" id="recovered">
+                                      <div class="alert alert-secondary">No more recovered
+                                      </div>
+                                </div>
+                                <div class="tab-pane fade" role="tabpanel" id="unrecoverable">
+                                      <div class="alert alert-secondary">Unrecoverable
+                                      </div>
+                                </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -595,5 +765,6 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
   </body>
 </html>
