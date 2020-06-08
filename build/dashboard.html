@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/Chart.min.css">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body class="d-flex flex-column">
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"><a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Dropfoods MS</a>
           <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-          <ul class="navbar-nav px-3">
+          <ul class="navbar-nav px-3 flex-row">
+            <li class="nav-item text-nowrap dropdown"><a class="px-3 nav-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i><span class="sr-only">Notifications</span></a>
+              <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Actions<a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a></a></div>
+            </li>
             <li class="nav-item text-nowrap"><a class="nav-link" href="#">Sign out</a></li>
           </ul>
         </nav>
@@ -19,281 +25,1078 @@
       <div class="row">
         <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="sidebarMenu">
           <div class="sidebar-sticky pt-3">
-            <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">main dashboard</h6><a class="nav-link active" data-toggle="pill" href="#mainDashboard" role="tab" aria-selected="true">Monitoring</a><a class="nav-link" data-toggle="pill" href="#spare-part" role="tab" aria-selected="false">Spare parts management</a><a class="nav-link" data-toggle="pill" href="#statistics" role="tab" aria-selected="false">Statistics</a>
-                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">Administration management</h6><a class="nav-link" data-toggle="pill" href="#settingsRemote" role="tab" aria-selected="false">Machine settings remotes</a><a class="nav-link" data-toggle="pill" href="#admin-staff" role="tab" aria-selected="false">Staffs</a><a class="nav-link" data-toggle="pill" href="#admin-warehouse" role="tab" aria-selected="false">Warehouse</a><a class="nav-link" data-toggle="pill" href="#admin-settings" role="tab" aria-selected="false">Settings</a>
+            <div class="nav flex-column" role="tablist" aria-orientation="vertical">
+                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">main dashboard</h6><a class="nav-link active" data-toggle="pill" href="#mainDashboard" role="tab" aria-selected="true">Monitorings</a><a class="nav-link" data-toggle="pill" href="#spare-part" role="tab" aria-selected="false">Spare parts</a><a class="nav-link" data-toggle="pill" href="#statistics" role="tab" aria-selected="false">Statistics</a>
+                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">Administration management</h6><a class="nav-link" data-toggle="pill" href="#settingsRemote" role="tab" aria-selected="false">VM settings remotes</a><a class="nav-link" data-toggle="pill" href="#admin-staff" role="tab" aria-selected="false">Staffs</a><a class="nav-link" data-toggle="pill" href="#admin-warehouse" role="tab" aria-selected="false">Warehouse</a><a class="nav-link" data-toggle="pill" href="#admin-settings" role="tab" aria-selected="false">Settings</a>
             </div>
           </div>
         </nav>
-        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4" role="main">
+        <main class="col-md-9 ml-sm-auto col-lg-10" role="main">
           <div class="row">
             <div class="col-12">
-              <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade" role="tabpanel" id="mainDashboard">
+              <div class="tab-content">
+                    <div class="tab-pane fade show active" role="tabpanel" id="mainDashboard">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">VM Monitoring</h1>
                           </div>
                       <div class="row">
-                        <div class="col-12 mb-3">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Healthy Status</h2>
-                                    <div class="btn-toolbar mb-2 mb-md-0">
-                                      <div class="btn-group">
-                                            <button class="btn btn-sm btn-outline-secondary">Normal<span class="badge badge-primary ml-2">1</span>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-secondary">Danger<span class="badge badge-danger ml-2">1</span>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-secondary">Exprired<span class="badge badge-danger ml-2">1</span>
-                                            </button>
+                        <div class="col-lg-8 pl-lg-5 pr-lg-0">
+                          <div class="row">
+                            <div class="col-12 mb-3">
+                              <div class="d-lg-flex justify-content-between mb-4 pt-lg-3">
+                                <ul class="nav nav-pills" role="tablist">
+                                  <li class="nav-item"><a class="nav-link h5 mb-0 active" href="#issueOpen" role="tab" data-toggle="tab">Issues Open<span class="badge badge-danger ml-2">7</span></a></li>
+                                  <li class="nav-item"><a class="nav-link h5 mb-0" href="#processStatus" role="tab" data-toggle="tab">ProcessStatus<span class="badge badge-primary ml-2">3</span></a></li>
+                                </ul><a class="btn btn-outline-secondary d-flex align-items-center" href="#">Create Ticket</a>
+                              </div>
+                              <div class="tab-content">
+                                    <div class="tab-pane fade show active" role="tabpanel" id="issueOpen">
+                                          <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="createTicketModal">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">Assign request</h5>
+                                                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <div class="bg-light p-3 border rounded mb-5">
+                                                    <dl class="row mb-0">
+                                                      <dt class="col-lg-4">Issue ID</dt>
+                                                      <dd class="col-lg-8">270520EC01CM001</dd>
+                                                      <dt class="col-lg-4">Machine</dt>
+                                                      <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                      <dt class="col-lg-4">Location</dt>
+                                                      <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                      <dt class="col-lg-4">Issue</dt>
+                                                      <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                      <dt class="col-lg-4"></dt>
+                                                      <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                      <dt class="col-lg-4">Detected at</dt>
+                                                      <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                      <dt class="col-lg-4">Severity</dt>
+                                                      <dd class="col-lg-8">
+                                                        <div class="badge badge-danger">Hight       </div>
+                                                      </dd>
+                                                    </dl>
+                                                  </div>
+                                                  <dl class="row mb-5">
+                                                    <dt class="col-lg-4">Assign to</dt>
+                                                    <dd class="col-lg-8">
+                                                          <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                    </dd>
+                                                    <dt class="col-lg-4">Note</dt>
+                                                    <dd class="col-lg-8">
+                                                      <textarea class="form-control" rows="3"></textarea>
+                                                    </dd>
+                                                  </dl>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      <div class="list-group shadow-sm" id="issueTable">
+                                            <div class="list-group-item d-none d-lg-block list-group-item-light">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between align-items-center">Sort
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0">
+                                                      <input class="form-control" placeholder="Vending Machines">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Issues</button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Door is opening(3)</a><a class="dropdown-item" href="#">Note Float(4)</a><a class="dropdown-item" href="#">...</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-lg-2 mb-3 mb-lg-0">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Severity</button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Hight</a><a class="dropdown-item" href="#">Low</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none">
+                                                  <input class="form-control" placeholder="Date detected">
+                                                </div>
+                                                <div class="col-lg-2 col-9 d-none">Assign to</div>
+                                                <div class="col-lg-1 col-3"></div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-door" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">1</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M03</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Door is opening</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Open</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-danger">HIGHT</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-noteJam" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">2</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M06</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Note Floats</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Note Paid into Stacker at Power Up</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-warning">LOW</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-connection" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">3</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M06</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Lost Connection</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Details Error</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-danger">HIGHT</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-power" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">4</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M07</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Power lost</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Details Error</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-danger">HIGHT</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-temperature" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">5</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M04</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Temperature</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Hight</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-danger">HIGHT</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-bill" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">6</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M08</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Bill Validator (NV11)</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Fraud Attempt</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-danger">HIGHT</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#open-app" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between"><span class="text-muted">7</span>
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0"><a href="#"><span>M07</span></a><br><small class="text-muted">Citilight, Phường Đakao, Q.1</small></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Moca App</strong><br><small class="text-muted"> 
+                                                    <div class="badge badge-light text-uppercase">Transaction failure</div></small></div>
+                                                <div class="col-lg-2">
+                                                  <div class="badge badge-warning">LOW</div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="processStatus">
+                                          <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="createTicketModal">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">Assign request</h5>
+                                                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <div class="bg-light p-3 border rounded mb-5">
+                                                    <dl class="row mb-0">
+                                                      <dt class="col-lg-4">Issue ID</dt>
+                                                      <dd class="col-lg-8">270520EC01CM001</dd>
+                                                      <dt class="col-lg-4">Machine</dt>
+                                                      <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                      <dt class="col-lg-4">Location</dt>
+                                                      <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                      <dt class="col-lg-4">Issue</dt>
+                                                      <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                      <dt class="col-lg-4"></dt>
+                                                      <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                      <dt class="col-lg-4">Detected at</dt>
+                                                      <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                      <dt class="col-lg-4">Severity</dt>
+                                                      <dd class="col-lg-8">
+                                                        <div class="badge badge-danger">Hight       </div>
+                                                      </dd>
+                                                    </dl>
+                                                  </div>
+                                                  <dl class="row mb-5">
+                                                    <dt class="col-lg-4">Assign to</dt>
+                                                    <dd class="col-lg-8">
+                                                          <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                    </dd>
+                                                    <dt class="col-lg-4">Note</dt>
+                                                    <dd class="col-lg-8">
+                                                      <textarea class="form-control" rows="3"></textarea>
+                                                    </dd>
+                                                  </dl>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      <div class="list-group shadow-sm">
+                                            <div class="list-group-item d-none d-lg-block list-group-item-light">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between align-items-center">Sort
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0">
+                                                      <input class="form-control" placeholder="Vending Machines">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Issues</button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Door is opening</a><a class="dropdown-item" href="#">Note Float</a><a class="dropdown-item" href="#">...</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-lg-2 mb-3 mb-lg-0">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status</button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Complete</a><a class="dropdown-item" href="#">Pending</a><a class="dropdown-item" href="#">In Process</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none">Last Activities</div>
+                                                <div class="col-lg-2 col-9 d-none">Assign to</div>
+                                                <div class="col-lg-1 col-3"></div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#inprocess-door" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between">1
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0">
+                                                      <div class="d-flex justify-content-between"><a href="#"><span>M01</span></a></div><small class="text-muted">Citilight, Phường Đakao, Q.1</small>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Note Float</strong><br><small class="text-muted">
+                                                    <div class="badge badge-light text-uppercase">Note paid into stacker at power up</div></small></div>
+                                                <div class="col-lg-2"><span class="badge badge-warning ml-2 text-uppercase">In Process</span>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#pending-door" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between">1
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0">
+                                                      <div class="d-flex justify-content-between"><a href="#"><span>M09</span></a></div><small class="text-muted">Citilight, Phường Đakao, Q.1</small>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Door is opening</strong><br><small class="text-muted">
+                                                    <div class="badge badge-light text-uppercase">Open</div></small></div>
+                                                <div class="col-lg-2"><span class="badge badge-warning ml-2 text-uppercase">Pending</span>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="list-group-item list-group-item-action" data-toggle="list" href="#completed-door" role="tab" onclick="openNav()">
+                                              <div class="row">
+                                                <div class="col-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-2 d-flex justify-content-between">1
+                                                      <div class="d-block d-lg-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                    </div>
+                                                    <div class="col-lg-10 mb-3 mb-lg-0">
+                                                      <div class="d-flex justify-content-between"><a href="#"><span>M03</span></a></div><small class="text-muted">Citilight, Phường Đakao, Q.1</small>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Door is opening</strong><br><small class="text-muted">
+                                                    <div class="badge badge-light text-uppercase">Open</div></small></div>
+                                                <div class="col-lg-2"><span class="badge badge-success ml-2 text-uppercase">Completed</span>
+                                                </div>
+                                                <div class="col-lg-2 d-lg-flex align-items-center d-none"><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                                                <div class="col-lg-2 col-9 d-lg-none">
+                                                  <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#createTicketModal">Assign			</button>
+                                                </div>
+                                                <div class="col-lg-1 col-3">
+                                                      <div class="dropdown">
+                                                        <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                       </div>
                                     </div>
                               </div>
-                          <div class="table-responsive">
-                            <table class="table table-striped table-hover table-lg table-borderless">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th> 
-                                    <select>
-                                      <option>VM(High Risk)</option>
-                                      <option>M001</option>
-                                      <option>M002</option>
-                                      <option>M003</option>
-                                      <option>Mxxx</option>
-                                    </select>
-                                  </th>
-                                  <th> 
-                                    <select>
-                                      <option>Location(All)</option>
-                                      <option>Citilight, Phường Đakao, Q.1</option>
-                                      <option>VUS Q.1</option>
-                                      <option>VUS Q.3</option>
-                                      <option>VUS Q.5</option>
-                                      <option>xxx</option>
-                                    </select>
-                                  </th>
-                                  <th> 
-                                    <select>
-                                      <option>Status(All)</option>
-                                      <option>Normal</option>
-                                      <option>Note Jam</option>
-                                      <option>Disconnected</option>
-                                      <option>XXX</option>
-                                    </select>
-                                  </th>
-                                  <th>Detection Date</th>
-                                  <th>                                </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="table-danger">
-                                  <td>1</td>
-                                  <td>M001</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Door is opening</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
-                                </tr>
-                                <tr class="table-danger">
-                                  <td>2</td>
-                                  <td>M003</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Note Jam</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
-                                </tr>
-                                <tr class="table-danger">
-                                  <td>3</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">disconnected</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
-                                </tr>
-                                <tr class="table-danger">
-                                  <td>4</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Temperature[High risk]</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
-                                </tr>
-                                <tr class="table-danger">
-                                  <td>5</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Error purchase by App [Moca]</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-primary" href="#">Create a ticket                </a></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-12 mb-3">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Tracking Tickets</h2>
-                                    <div class="btn-toolbar mb-2 mb-md-0">
-                                      <div class="btn-group">
-                                            <button class="btn btn-sm btn-outline-secondary">Normal<span class="badge badge-primary ml-2">1</span>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-secondary">Danger<span class="badge badge-danger ml-2">1</span>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-secondary">Exprired<span class="badge badge-danger ml-2">1</span>
-                                            </button>
-                                      </div>
+                        <div class="col-lg-4 px-lg-5">
+                          <div class="row">           
+                            <div class="col-lg-12 mb-3" id="showSidebar">
+                              <div class="tab-content">
+                                    <div class="tab-pane fade" role="tabpanel" id="open-door">
+                                          <div class="card shadow">
+                                            <div class="card-header">Door issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-noteJam">
+                                          <div class="card shadow">
+                                            <div class="card-header">Note Jam issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-connection">
+                                          <div class="card shadow">
+                                            <div class="card-header">Connection issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-power">
+                                          <div class="card shadow">
+                                            <div class="card-header">Power issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-temperature">
+                                          <div class="card shadow">
+                                            <div class="card-header">Temperature issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-bill">
+                                          <div class="card shadow">
+                                            <div class="card-header">Bill issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="open-app">
+                                          <div class="card shadow">
+                                            <div class="card-header">App issue Details - open</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Open
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8">
+                                                      <input class="form-control" type="text" placeholder="Enter staff name" value="">
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <textarea class="form-control" rows="3"></textarea>
+                                                </dd>
+                                              </dl>
+                                              <div class="d-flex justify-content-between">
+                                                <button class="btn btn-link" type="button" onclick="closeNav()">Cancel</button>
+                                                <button class="btn btn-primary" type="button">Assign</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade show active" role="tabpanel" id="inprocess-door">
+                                          <div class="card shadow">
+                                            <div class="card-header">Note Float issue Details - inprocess</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Open</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>In Process
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assigned at</dt>
+                                                <dd class="col-lg-8"> <small class="text-muted">16:34PM - 21/06/2020</small></dd>
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8"><a href="#">Tin.Nguyen </a><a class="ml-2" href="#">[Re-assign]</a></dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <p>This is note description<a class="ml-2" href="#">[Edit]</a></p>
+                                                </dd>
+                                                <dt class="col-lg-4"></dt>
+                                                <dd class="col-lg-8">
+                                                  <hr>
+                                                </dd>
+                                                <dt class="col-lg-4">1st investigating </dt>
+                                                <dd class="col-lg-8"> <small class="text-muted">16:34PM - 21/06/2020</small></dd>
+                                                <dt class="col-lg-4">Status</dt>
+                                                <dd class="col-lg-8"> <small class="text-muted">16:34PM - 21/06/2020</small></dd>
+                                              </dl>
+                                              <button class="btn btn-primary btn-block" type="button" onclick="closeNav()">Close</button>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="pending-door">
+                                          <div class="card shadow">
+                                            <div class="card-header">Note Float issue Details - pending</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Open</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>In Process
+                                              </div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Resolved</div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Assigned at</dt>
+                                                <dd class="col-lg-8"> <small class="text-muted">16:34PM - 21/06/2020</small></dd>
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8"><a href="#">Tin.Nguyen </a><a class="ml-2" href="#">[Re-assign]</a></dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <p>This is note description<a class="ml-2" href="#">[Edit]</a><a class="ml-2" href="#">[Delete]</a></p>
+                                                </dd>
+                                                <dt class="col-lg-4"></dt>
+                                                <dd class="col-lg-8">
+                                                  <hr>
+                                                </dd>
+                                                <dt class="col-lg-4">1st investigating </dt>
+                                                <dd class="col-lg-8"> <small class="text-muted">16:34PM - 21/06/2020</small></dd>
+                                                <dt class="col-lg-4">Status</dt>
+                                                <dd class="col-lg-8">
+                                                  <div class="badge badge-warning">PENDING        </div>
+                                                </dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">        <a href="#">Add Note</a></dd>
+                                              </dl>
+                                              <button class="btn btn-primary btn-block" type="button" onclick="closeNav()">Close</button>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" id="completed-door">
+                                          <div class="card shadow">
+                                            <div class="card-header">Note Float issue Details - completed</div>
+                                            <div class="d-flex text-center bg-light">
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">Open</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center text-muted">In Process</div>
+                                              <div class="p-2 flex-fill">
+                                                <hr>
+                                              </div>
+                                              <div class="p-2 flex-fill d-flex align-items-center justify-content-center"><i class="fas fa-check mr-2 text-success"></i>Resolved
+                                              </div>
+                                            </div>
+                                            <div class="card-body">
+                                              <div class="bg-light p-3 border rounded mb-5">
+                                                <dl class="row mb-0">
+                                                  <dt class="col-lg-4">Issue ID</dt>
+                                                  <dd class="col-lg-8">270520EC01CM001</dd>
+                                                  <dt class="col-lg-4">Machine</dt>
+                                                  <dd class="col-lg-8"> <a href="#">M001</a></dd>
+                                                  <dt class="col-lg-4">Location</dt>
+                                                  <dd class="col-lg-8">Citilight, Phường Đakao, Q.1</dd>
+                                                  <dt class="col-lg-4">Issue</dt>
+                                                  <dd class="col-lg-8"> <span class="text-danger">Note Float</span></dd>
+                                                  <dt class="col-lg-4"></dt>
+                                                  <dd class="col-lg-8"> <strong>note paid into stacker at power up</strong></dd>
+                                                  <dt class="col-lg-4">Detected at</dt>
+                                                  <dd class="col-lg-8"> <small class="text-muted">16:34PM - 20/06/2020</small></dd>
+                                                  <dt class="col-lg-4">Severity</dt>
+                                                  <dd class="col-lg-8">
+                                                    <div class="badge badge-danger">Hight       </div>
+                                                  </dd>
+                                                </dl>
+                                              </div>
+                                              <dl class="row mb-5">
+                                                <dt class="col-lg-4">Status</dt>
+                                                <dd class="col-lg-8">
+                                                  <div class="badge badge-success">COMPLETED</div>
+                                                </dd>
+                                                <dt class="col-lg-4">Assign to</dt>
+                                                <dd class="col-lg-8"><a href="#">Tin.Nguyen</a></dd>
+                                                <dt class="col-lg-4">Note</dt>
+                                                <dd class="col-lg-8">
+                                                  <p>This is note description<a class="ml-2" href="#">[ Edit ]</a></p>
+                                                </dd>
+                                              </dl>
+                                              <button class="btn btn-primary btn-block" type="button" onclick="closeNav()">Close</button>
+                                            </div>
+                                          </div>
                                     </div>
                               </div>
-                          <div class="table-responsive">
-                            <table class="table table-striped table-hover table-lg table-borderless">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th> 
-                                    <select>
-                                      <option>VM(High Risk)</option>
-                                      <option>M001</option>
-                                      <option>M002</option>
-                                      <option>M003</option>
-                                      <option>Mxxx</option>
-                                    </select>
-                                  </th>
-                                  <th> 
-                                    <select>
-                                      <option>Location(All)</option>
-                                      <option>Citilight, Phường Đakao, Q.1</option>
-                                      <option>VUS Q.1</option>
-                                      <option>VUS Q.3</option>
-                                      <option>VUS Q.5</option>
-                                      <option>xxx</option>
-                                    </select>
-                                  </th>
-                                  <th> 
-                                    <select>
-                                      <option>Status(All)</option>
-                                      <option>Normal</option>
-                                      <option>Note Jam</option>
-                                      <option>Disconnected</option>
-                                      <option>XXX</option>
-                                    </select>
-                                  </th>
-                                  <th>Detection Date</th>
-                                  <th>Assign to                </th>
-                                  <th>Assigned Date</th>
-                                </tr>
-                              </thead>
-                              <tbody>           
-                                <tr>
-                                  <td>3</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">disconnected</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
-                                  <td>17:3PM - 20/06/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Temperature[High risk]</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
-                                  <td>17:3PM - 20/06/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>M005</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td class="text-danger font-weight-bold">Error purchase by App [Moca]</td>
-                                  <td>16:34PM - 20/06/2020</td>
-                                  <td><a class="btn btn-secondary" href="#">Assigned to Tin.Nguyễn</a></td>
-                                  <td>17:3PM - 20/06/2020</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Maintenance status</h2>
-                                <div class="btn-toolbar mb-2 mb-md-0">
-                                  <div class="btn-group mr-2">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Completed<span class="badge badge-success ml-2">1</span></button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Pending<span class="badge badge-warning ml-2">2        </span></button>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                    <h2 class="h3">Activities</h2>
                                   </div>
-                                </div>
+                              <div class="list-group shadow-sm">
+                                    <div class="list-group-item list-group-item-action">
+                                      <div class="row">
+                                        <div class="col-12 d-flex justify-content-between mb-3"><span>M001<span class="badge badge-success ml-2">Completed</span><br><small class="text-muted">ID: 270520EC01CM001</small></span><span class="d-flex justify-content-between">
+                                                <div class="dropdown">
+                                                  <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                  </button>
+                                                  <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                  </div>
+                                                </div></span></div>
+                                        <div class="col-lg-12"> <span class="text-muted mr-3">Type</span>Regular Maintenance</div>
+                                        <div class="col-lg-12"> <span class="text-muted mr-3">Repair at</span>08:30 AM - 21/06/2020</div>
+                                        <div class="col-lg-12 mb-3"><span class="text-muted mr-3">Task holder</span><a href="#">Tin Nguyễn</a></div>
+                                        <div class="col-lg-12"><small class="text-muted">Last updated at 4:00PM</small></div>
+                                      </div>
+                                    </div>
+                                    <div class="list-group-item list-group-item-action">
+                                      <div class="row">
+                                        <div class="col-12 d-flex justify-content-between mb-3"><span>M001<span class="badge badge-success ml-2">Completed</span><br><small class="text-muted">ID: 270520EC01CM001</small></span><span class="d-flex justify-content-between">
+                                                <div class="dropdown">
+                                                  <button class="btn btn-light btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i>
+                                                  </button>
+                                                  <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="fas fa-check mr-2"></i>Resolve</a>
+                                                  </div>
+                                                </div></span></div>
+                                        <div class="col-lg-12"> <span class="text-muted mr-3">Type</span>Regular Maintenance</div>
+                                        <div class="col-lg-12"> <span class="text-muted mr-3">Repair at</span>08:30 AM - 21/06/2020</div>
+                                        <div class="col-lg-12 mb-3"><span class="text-muted mr-3">Task holder</span><a href="#">Tin Nguyễn</a></div>
+                                        <div class="col-lg-12"><small class="text-muted">Last updated at 4:00PM</small></div>
+                                      </div>
+                                    </div>
                               </div>
-                          <div class="table-responsive">
-                            <table class="table table-striped table-hover table-lg table-borderless">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th> 
-                                    <select>
-                                      <option>VM(All)</option>
-                                      <option>M001</option>
-                                      <option>M002</option>
-                                      <option>M003</option>
-                                      <option>Mxxx</option>
-                                    </select>
-                                  </th>
-                                  <th>Location</th>
-                                  <th> 
-                                    <select> 
-                                      <option>Type(All)</option>
-                                      <option>Regular Maintenance</option>
-                                      <option>Repair</option>
-                                      <option>Replacement</option>
-                                      <option>xxx</option>
-                                    </select>
-                                  </th>
-                                  <th>Detection Date</th>
-                                  <th>Repair Date</th>
-                                  <th>Task Holder</th>
-                                  <th> 
-                                    <select> 
-                                      <option>Status(All)</option>
-                                      <option>Completed</option>
-                                      <option>Pending</option>
-                                      <option>xxx</option>
-                                    </select>
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>M001</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Regular Maintenance</td>
-                                  <td>16:34 PM - 20/06/2020</td>
-                                  <td>08:30 AM - 21/06/2020</td>
-                                  <td>Tin Nguyễn</td>
-                                  <td> <span class="badge badge-success">Completed</span></td>
-                                </tr>
-                                <tr>
-                                  <td>1</td>
-                                  <td>M001</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Repair<br><span class="text-muted d-block">RS232 to TTL cable for NV11</span></td>
-                                  <td>16:34 PM - 20/06/2020</td>
-                                  <td>08:30 AM - 21/06/2020</td>
-                                  <td>Tin Nguyễn</td>
-                                  <td> <span class="badge badge-warning">Pending</span></td>
-                                </tr>
-                                <tr>
-                                  <td>1</td>
-                                  <td>M001</td>
-                                  <td>Citilight, Phường Đakao, Q.1</td>
-                                  <td>Replacement<br><span class="text-muted d-block">VGA cable</span></td>
-                                  <td>16:34 PM - 20/06/2020</td>
-                                  <td>08:30 AM - 21/06/2020</td>
-                                  <td>Tin Nguyễn</td>
-                                  <td> <span class="badge badge-warning">Pending</span></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -307,7 +1110,7 @@
                           <div class="card">
                             <div class="card-body">
                                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                    <h2 class="h3">Create New Order</h2>
+                                    <h2 class="h3">Create New Export</h2>
                                   </div>
                               <form>
                                 <div class="form-row">
@@ -315,9 +1118,16 @@
                                     <label>Spare part</label>
                                         <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="Spiral Springs capacity 5">
                                   </div>
-                                  <div class="col-lg-4 mb-3">
+                                  <div class="col-lg-2 mb-3">
                                     <label>Quantity</label>
                                         <input class="form-control" type="number" placeholder="quantity" value="1">
+                                  </div>
+                                  <div class="col-lg-2 mb-3">
+                                    <label>Condition</label>
+                                    <select class="form-control">
+                                      <option>New</option>
+                                      <option>Old            </option>
+                                    </select>
                                   </div>
                                   <div class="col-lg-2 mb-3">
                                     <label class="invisible">remove</label>
@@ -325,19 +1135,33 @@
                                   </div>
                                 </div>
                                 <div class="form-row">
-                                  <div class="col-lg-6 mb-3">           
+                                  <div class="col-lg-6 mb-3">
+                                    <label>Spare part</label>
                                         <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="">
                                   </div>
-                                  <div class="col-lg-4 mb-3">           
-                                        <input class="form-control" type="number" placeholder="quantity" value="">
+                                  <div class="col-lg-2 mb-3">
+                                    <label>Quantity</label>
+                                        <input class="form-control" type="number" placeholder="quantity" value="1">
                                   </div>
-                                  <div class="col-lg-2 mb-3">           
+                                  <div class="col-lg-2 mb-3">
+                                    <label>Condition</label>
+                                    <select class="form-control">
+                                      <option>New</option>
+                                      <option>Old            </option>
+                                    </select>
+                                  </div>
+                                  <div class="col-lg-2 mb-3">
+                                    <label class="invisible">remove</label>
                                     <button class="btn btn-secondary btn-block">+</button>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label>Spare holder</label>
                                       <input class="form-control" type="text" placeholder="Staff name" value="">
+                                </div>
+                                <div class="form-group">
+                                  <label>Replace for VM</label>
+                                      <input class="form-control" type="text" placeholder="Enter VM name or VMID" value="">
                                 </div>
                                 <div class="d-flex justify-content-between"><a class="button btn-link btn-lg" href="#">Clear</a><a class="button btn-primary btn-lg" href="#">Submit</a></div>
                               </form>
@@ -374,6 +1198,7 @@
                                   <td>
                                     <div class="list-group list-group-horizontal">
                                       <div class="list-group-item"><a href="#">Edit</a></div>
+                                      <div class="list-group-item"><a href="#">Restore</a></div>
                                       <div class="list-group-item"><a href="#">Delete</a></div>
                                     </div>
                                   </td>
@@ -389,6 +1214,7 @@
                                   <td>
                                     <div class="list-group list-group-horizontal">
                                       <div class="list-group-item"><a href="#">Edit</a></div>
+                                      <div class="list-group-item"><a href="#">Restore</a></div>
                                       <div class="list-group-item"><a href="#">Delete</a></div>
                                     </div>
                                   </td>
@@ -401,109 +1227,143 @@
                     </div>
                     <div class="tab-pane fade" role="tabpanel" id="statistics">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Statistics</h1> 
+                            <h1 class="h2">Statistics</h1>
                           </div>
+                      <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
                     <div class="tab-pane fade" role="tabpanel" id="settingsRemote">
-                          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Machines Settings Remotes</h1>
-                            <div class="btn-toolbar mb-2 mb-md-0">
-                              <div class="btn-group mr-2">
-                                <button class="btn btn-sm btn-outline-secondary" type="button">Share</button>
-                                <button class="btn btn-sm btn-outline-secondary" type="button">Export</button>
+                          <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="addNewVM">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Add new VM</h5>
+                                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-group">       
+                                      <label>Machine Name</label>
+                                      <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text">M-</span></div>
+                                            <input class="form-control" type="number" placeholder="Enter Machine number" value="">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Platform</label>
+                                      <select class="form-control">
+                                        <option>Window</option>
+                                        <option>Android</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">       
+                                      <label>Location</label>
+                                          <input class="form-control" type="text" placeholder="Address" value="">
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="col-lg-4 mb-3">
+                                        <select class="form-control">
+                                          <option>City</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-lg-4 mb-3">
+                                        <select class="form-control">
+                                          <option>Ward</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-lg-4 mb-3">
+                                        <select class="form-control">
+                                          <option>District    </option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">       
+                                      <label>Model</label>
+                                      <select class="form-control">
+                                        <option>49 inch</option>
+                                        <option>32 inch new</option>
+                                        <option>32 inch old</option>
+                                      </select>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                  <button class="btn btn-primary" type="button">Submit</button>
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                            <h2 class="h3">Machines Healthy</h2>
+                          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">VM Settings Remotes</h1>
                                 <div class="btn-toolbar mb-2 mb-md-0">
                                   <div class="btn-group">
-                                        <button class="btn btn-sm btn-outline-secondary">Good<span class="badge badge-primary ml-2">1</span>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-secondary">Danger<span class="badge badge-danger ml-2">1</span>
-                                        </button>
+                                    <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#addNewVM">Add new VM		</button>
                                   </div>
                                 </div>
                           </div>
                       <div class="table-responsive">
-                        <table class="table table-striped table-hover table-lg">
+                        <table class="table table-striped table-hover table-lg table-borderless">
                           <thead>
                             <tr>
                               <th>#</th>
-                              <th>Header</th>
-                              <th>Header</th>
-                              <th>Header</th>
-                              <th>Header</th>
+                              <th>VM					</th>
+                              <th>Location</th>
+                              <th>Model</th>
+                              <th>Platform</th>
+                              <th>Temperature</th>
+                              <th>Cash in return</th>
+                              <th>Light, LCD switch</th>
+                              <th>Restart time</th>
+                              <th>Initial Date</th>
+                              <th>last update</th>
+                              <th></th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="table-success">
+                            <tr>
                               <td>1</td>
-                              <td>Lorem</td>
-                              <td>ipsum</td>
-                              <td>dolor</td>
-                              <td>sit</td>
+                              <td><i class="fas fa-power-off mr-3 text-success"></i><a href="#">M001</a>
+                              </td>
+                              <td>Citilight, Phường Đakao, Q.1</td>
+                              <td>49"</td>
+                              <td>Window 7</td>
+                              <td>10°</td>
+                              <td>10.000</td>
+                              <td class="text-success">ON</td>
+                              <td>06:00 AM</td>
+                              <td>13:00PM - 20/06/2018</td>
+                              <td>16:34PM - 20/06/2020</td>
+                              <td><a href="#">Edit</a></td>
                             </tr>
-                            <tr class="table-danger">
+                            <tr>
                               <td>2</td>
-                              <td>amet</td>
-                              <td>consectetur</td>
-                              <td>adipiscing</td>
-                              <td>elit</td>
+                              <td><i class="fas fa-power-off mr-3 text-success"></i><a href="#">M002</a>
+                              </td>
+                              <td>Citilight, Phường Đakao, Q.1</td>
+                              <td>32"</td>
+                              <td>Android</td>
+                              <td>10°</td>
+                              <td>10.000</td>
+                              <td class="text-muted">Not supported</td>
+                              <td>06:00 AM</td>
+                              <td>13:00PM - 20/06/2018</td>
+                              <td>16:34PM - 20/06/2020</td>
+                              <td><a href="#">Edit</a></td>
                             </tr>
                             <tr>
                               <td>3</td>
-                              <td>Integer</td>
-                              <td>nec</td>
-                              <td>odio</td>
-                              <td>Praesent</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                            <h2 class="h3">Latest Maintenance</h2>
-                                <div class="btn-toolbar mb-2 mb-md-0">
-                                  <div class="btn-group">
-                                        <button class="btn btn-sm btn-outline-secondary">Good<span class="badge badge-primary ml-2">1</span>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-secondary">Danger<span class="badge badge-danger ml-2">1</span>
-                                        </button>
-                                  </div>
-                                </div>
-                          </div>
-                      <div class="table-responsive">
-                        <table class="table table-striped table-hover table-lg">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>Header</th>
-                              <th>Header</th>
-                              <th>Header</th>
-                              <th>Header</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="table-success">
-                              <td>1</td>
-                              <td>Lorem</td>
-                              <td>ipsum</td>
-                              <td>dolor</td>
-                              <td>sit</td>
-                            </tr>
-                            <tr class="table-danger">
-                              <td>2</td>
-                              <td>amet</td>
-                              <td>consectetur</td>
-                              <td>adipiscing</td>
-                              <td>elit</td>
-                            </tr>
-                            <tr>
-                              <td>3</td>
-                              <td>Integer</td>
-                              <td>nec</td>
-                              <td>odio</td>
-                              <td>Praesent</td>
+                              <td><i class="fas fa-power-off mr-3 text-success"></i><a href="#">M003</a>
+                              </td>
+                              <td>Citilight, Phường Đakao, Q.1</td>
+                              <td>49"</td>
+                              <td>Android</td>
+                              <td>10°</td>
+                              <td>10.000</td>
+                              <td class="text-muted">OFF</td>
+                              <td>06:00 AM</td>
+                              <td>13:00PM - 20/06/2018</td>
+                              <td>16:34PM - 20/06/2020</td>
+                              <td><a href="#">Edit</a></td>
                             </tr>
                           </tbody>
                         </table>
@@ -512,87 +1372,374 @@
                     <div class="tab-pane fade" role="tabpanel" id="admin-settings">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Settings</h1>
-                            <div class="btn-toolbar mb-2 mb-md-0">
-                              <div class="btn-group mr-2">
-                                <button class="btn btn-sm btn-outline-secondary" type="button">Share</button>
-                                <button class="btn btn-sm btn-outline-secondary" type="button">Export</button>
-                              </div>
-                            </div>
                           </div>
-                      <div class="col-lg-6">
-                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                              <h2 class="h3">In Stocks</h2>
-                              <div class="btn-toolbar mb-2 mb-md-0">
-                                <div class="btn-group mr-2">
-                                  <button class="btn btn-sm btn-outline-secondary" type="button">New Import	</button>
-                                </div>
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <nav class="d-md-block bg-light collapse">
+                            <div class="sidebar-sticky pt-3">
+                              <div class="nav flex-column" id="sub-pills" role="tablist" aria-orientation="vertical"><a class="nav-link active" data-toggle="pill" href="#issueType" role="tab" aria-selected="true">Issues Type</a><a class="nav-link" data-toggle="pill" href="#item" role="tab" aria-selected="false">VM settings</a>
                               </div>
                             </div>
-                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                          <li class="nav-item" role="presentation"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#new" role="tab" aria-selected="true">New<span class="badge badge-primary ml-3">100</span></a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#recovered" role="tab" aria-selected="false">Recovered<span class="badge badge-primary ml-3">100</span></a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#unrecoverable" role="tab" aria-selected="false">Unrecoverable<span class="badge badge-primary ml-3">100</span></a></li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                              <div class="tab-pane fade show active" role="tabpanel" id="new">
-                                <div class="table-responsive">
-                                  <table class="table table-striped table-hover table-lg table-borderless">
-                                    <thead>
-                                      <tr>
-                                        <th colspan="2">
-                                          <form>
-                                                <input class="form-control" type="text" placeholder="Enter Spare name or Code name" value="">
-                                          </form>
-                                        </th>
-                                        <th>Code</th>
-                                        <th>In Stocks</th>
-                                        <th>Last Import</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>1</td>
-                                        <td> <a href="#">Slide tray rail for the Machine Door</a></td>
-                                        <td>M001</td>
-                                        <td>100</td>
-                                        <td>10/06/2019								</td>
-                                      </tr>
-                                      <tr>
-                                        <td>2</td>
-                                        <td><a href="#">Spiral Springs capacity 5</a></td>
-                                        <td>M005</td>
-                                        <td>100</td>
-                                        <td>10/06/2019</td>
-                                      </tr>
-                                      <tr>
-                                        <td>3</td>
-                                        <td> <a href="#">Spiral Springs capacity 4</a></td>
-                                        <td>M005</td>
-                                        <td>100</td>
-                                        <td>10/06/2019</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                          </nav>
+                        </div>
+                        <div class="col-lg-10">
+                          <div class="tab-content">
+                                <div class="tab-pane fade show active" role="tabpanel" id="issueType">
+                                  <div class="card mb-5">
+                                    <div class="card-body">
+                                          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                            <h2 class="h3">New Issue Type</h2>
+                                          </div>
+                                      <form>
+                                        <div class="form-row">
+                                          <div class="col-lg-8 mb-3">
+                                            <label>Issue Type Name</label>
+                                                <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="Power lost">
+                                          </div>
+                                          <div class="col-lg-4 mb-3">
+                                            <label>Priority</label>
+                                            <Select class="form-control">
+                                              <option>High</option>
+                                              <option>Normal</option>
+                                              <option>Low        </option>
+                                            </Select>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between"><a class="button btn-link btn-lg" href="#">Clear</a><a class="button btn-primary btn-lg" href="#">Submit</a></div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                  <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-lg table-borderless">
+                                      <thead>
+                                        <tr>
+                                          <th>#</th>
+                                          <th>Issue type				</th>
+                                          <th>Severity</th>
+                                          <th>Date created</th>
+                                          <th></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>	Note Jam</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>Lost Connection</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td>Power lost</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td>4</td>
+                                          <td>Temperature</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td>5</td>
+                                          <td>Error purchase by App [Moca]</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td>6</td>
+                                          <td>Error purchase by App [Dropfoods]</td>
+                                          <td>High				</td>
+                                          <td>16:34PM - 20/06/2020</td>
+                                          <td><a href="#">Edit</a></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="tab-pane fade" role="tabpanel" id="recovered">
-                                    <div class="alert alert-secondary">No more recovered
+                                <div class="tab-pane fade" role="tabpanel" id="item">
+                                      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                                        <h2 class="h3">VM Settings</h2>
+                                      </div>
+                                  <div class="card mb-5">
+                                    <div class="card-body">
+                                      <form>
+                                        <div class="form-row">
+                                          <div class="col-lg-8 mb-3">
+                                            <label>VM model</label>
+                                                <input class="form-control" type="text" placeholder="Enter VM Name" value="49 inch new">
+                                          </div>
+                                          <div class="col-lg-4 mb-3">
+                                            <label>Screen Resolution</label>
+                                            <Select class="form-control">
+                                              <option>49 inch</option>
+                                              <option>32 inch</option>
+                                              <option>55 inch</option>
+                                            </Select>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between"><a class="button btn-link btn-lg" href="#">Clear</a><a class="button btn-primary btn-lg" href="#">Submit</a></div>
+                                      </form>
                                     </div>
-                              </div>
-                              <div class="tab-pane fade" role="tabpanel" id="unrecoverable">
-                                    <div class="alert alert-secondary">Unrecoverable
+                                  </div>
+                                  <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">49 inch</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">32 inch new</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">32 inch old</a></li>
+                                  </ul>
+                                  <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover table-lg table-borderless">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>Issue type				</th>
+                                              <th>Priority</th>
+                                              <th>Date created</th>
+                                              <th></th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>1</td>
+                                              <td>	Note Jam</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>2</td>
+                                              <td>Lost Connection</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>3</td>
+                                              <td>Power lost</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>4</td>
+                                              <td>Temperature</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>5</td>
+                                              <td>Error purchase by App [Moca]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>6</td>
+                                              <td>Error purchase by App [Dropfoods]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
                                     </div>
-                              </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover table-lg table-borderless">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>Issue type				</th>
+                                              <th>Priority</th>
+                                              <th>Date created</th>
+                                              <th></th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>1</td>
+                                              <td>	Note Jam</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>2</td>
+                                              <td>Lost Connection</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>3</td>
+                                              <td>Power lost</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>4</td>
+                                              <td>Temperature</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>5</td>
+                                              <td>Error purchase by App [Moca]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>6</td>
+                                              <td>Error purchase by App [Dropfoods]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover table-lg table-borderless">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>Issue type				</th>
+                                              <th>Priority</th>
+                                              <th>Date created</th>
+                                              <th></th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>1</td>
+                                              <td>	Note Jam</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>2</td>
+                                              <td>Lost Connection</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>3</td>
+                                              <td>Power lost</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>4</td>
+                                              <td>Temperature</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>5</td>
+                                              <td>Error purchase by App [Moca]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                            <tr>
+                                              <td>6</td>
+                                              <td>Error purchase by App [Dropfoods]</td>
+                                              <td>High				</td>
+                                              <td>16:34PM - 20/06/2020</td>
+                                              <td><a href="#">Edit</a></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="tab-pane fade" role="tabpanel" id="admin-staff">
+                          <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="addNewStaff">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Add New Staff</h5>
+                                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-row">
+                                      <div class="col-lg-6 mb-3">
+                                        <label>Invoice number</label>
+                                            <input class="form-control" type="number" placeholder="Staff name" value="">
+                                      </div>
+                                      <div class="col-lg-6 mb-3">
+                                        <label>Import date</label>
+                                            <input class="form-control" type="number" placeholder="30/06/2020" value="30/06/2020">
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="col-lg-6 mb-3">
+                                        <label>Spare part name</label>
+                                            <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="Spiral Springs capacity 5">
+                                      </div>
+                                      <div class="col-lg-4 mb-3">
+                                        <label>Quantity</label>
+                                            <input class="form-control" type="number" placeholder="quantity" value="1">
+                                      </div>
+                                      <div class="col-lg-2 mb-3">
+                                        <label class="invisible">remove</label>
+                                        <button class="btn btn-secondary btn-block">-</button>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="col-lg-6 mb-3">           
+                                            <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="">
+                                      </div>
+                                      <div class="col-lg-4 mb-3">           
+                                            <input class="form-control" type="number" placeholder="quantity" value="">
+                                      </div>
+                                      <div class="col-lg-2 mb-3">           
+                                        <button class="btn btn-secondary btn-block">+ </button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                  <button class="btn btn-primary" type="button">Submit</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Staffs</h1>
                                 <div class="btn-toolbar mb-2 mb-md-0">
                                   <div class="btn-group">
-                                        <button class="btn btn-sm btn-outline-secondary">Add New Staff
-                                        </button>
+                                    <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#addNewStaff">Add New Staff</button>
                                   </div>
                                 </div>
                           </div>
@@ -608,36 +1755,59 @@
                                 <th>Phone number</th>
                                 <th>Role</th>
                                 <th>Date added</th>
+                                <th>Status</th>
+                                <th></th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td>1</td>
-                                <td>Vũ.Nguyễn</td>
+                                <td> <a href="#">Vũ.Nguyễn<br><small class="text-muted">{Link to view tracklog}</small></a></td>
                                 <td>0904.028.457</td>
-                                <td>Lead Technician</td>
+                                <td>Lead Technician<br>Filler</td>
                                 <td>08:30 AM - 21/06/2020</td>
+                                <td>Quit</td>
+                                <td> 
+                                  <div class="list-group list-group-horizontal">
+                                    <div class="list-group-item"><a href="#">Edit</a></div>
+                                    <div class="list-group-item"><a href="#">Delete</a></div>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <td>2</td>
-                                <td>Vũ.Nguyễn</td>
+                                <td><a href="#">Vũ.Nguyễn<br><small class="text-muted">{Link to view tracklog}</small></a></td>
                                 <td>0904.028.457</td>
                                 <td>Lead Technician</td>
                                 <td>08:30 AM - 21/06/2020</td>
+                                <td>Working</td>
+                                <td>
+                                  <div class="list-group list-group-horizontal">
+                                    <div class="list-group-item"><a href="#">Edit</a></div>
+                                    <div class="list-group-item"><a href="#">Delete</a></div>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <td>3</td>
-                                <td>Vũ.Nguyễn</td>
+                                <td><a href="#">Vũ.Nguyễn<br><small class="text-muted">{Link to view tracklog}</small></a></td>
                                 <td>0904.028.457</td>
                                 <td>Lead Technician</td>
                                 <td>08:30 AM - 21/06/2020</td>
+                                <td>Working</td>
+                                <td>
+                                  <div class="list-group list-group-horizontal">
+                                    <div class="list-group-item"><a href="#">Edit</a></div>
+                                    <div class="list-group-item"><a href="#">Delete</a></div>
+                                  </div>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade show active" role="tabpanel" id="admin-warehouse">
+                    <div class="tab-pane fade" role="tabpanel" id="admin-warehouse">
                           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">Warehouse</h1>
                           </div>
@@ -650,13 +1820,13 @@
                                   </div>
                               <form>
                                 <div class="form-row">
-                                  <div class="col-lg-6">
+                                  <div class="col-lg-6 mb-3">
                                     <label>Invoice number</label>
-                                        <input class="form-control" type="number" placeholder="Staff name" value="">
+                                        <input class="form-control" type="number" placeholder="Invoice Number" value="">
                                   </div>
-                                  <div class="col-lg-6">
+                                  <div class="col-lg-6 mb-3">
                                     <label>Import date</label>
-                                        <input class="form-control" type="number" placeholder="30/06/2020" value="30/06/2020">
+                                        <input class="form-control" type="text" placeholder="30/06/2020" value="30/06/2020">
                                   </div>
                                 </div>
                                 <div class="form-row">
@@ -665,28 +1835,13 @@
                                         <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="Spiral Springs capacity 5">
                                   </div>
                                   <div class="col-lg-4 mb-3">
+                                    <label>Serial Number</label>
+                                        <input class="form-control" type="number" placeholder="Serial Number" value="1">
+                                  </div>
+                                  <div class="col-lg-2 mb-3">
                                     <label>Quantity</label>
                                         <input class="form-control" type="number" placeholder="quantity" value="1">
                                   </div>
-                                  <div class="col-lg-2 mb-3">
-                                    <label class="invisible">remove</label>
-                                    <button class="btn btn-secondary btn-block">-</button>
-                                  </div>
-                                </div>
-                                <div class="form-row">
-                                  <div class="col-lg-6 mb-3">           
-                                        <input class="form-control" type="text" placeholder="Enter Spare part name or code" value="">
-                                  </div>
-                                  <div class="col-lg-4 mb-3">           
-                                        <input class="form-control" type="number" placeholder="quantity" value="">
-                                  </div>
-                                  <div class="col-lg-2 mb-3">           
-                                    <button class="btn btn-secondary btn-block">+</button>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label>Spare holder</label>
-                                      <input class="form-control" type="text" placeholder="Staff name" value="">
                                 </div>
                                 <div class="d-flex justify-content-between"><a class="button btn-link btn-lg" href="#">Clear</a><a class="button btn-primary btn-lg" href="#">Submit</a></div>
                               </form>
@@ -694,9 +1849,6 @@
                           </div>
                         </div>
                         <div class="col-lg-12">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                                <h2 class="h3">Inventory</h2>
-                              </div>
                           <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#new" role="tab" aria-selected="true">New<span class="badge badge-primary ml-3">100</span></a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#recovered" role="tab" aria-selected="false">Recovered<span class="badge badge-primary ml-3">100</span></a></li>
@@ -716,6 +1868,7 @@
                                           <th>Code</th>
                                           <th>In Stocks</th>
                                           <th>Last Import</th>
+                                          <th></th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -725,6 +1878,7 @@
                                           <td>M001</td>
                                           <td>100</td>
                                           <td>10/06/2019								</td>
+                                          <td><a href="#">Edit</a></td>
                                         </tr>
                                         <tr>
                                           <td>2</td>
@@ -732,6 +1886,7 @@
                                           <td>M005</td>
                                           <td>100</td>
                                           <td>10/06/2019</td>
+                                          <td><a href="#">Edit</a></td>
                                         </tr>
                                         <tr>
                                           <td>3</td>
@@ -739,17 +1894,18 @@
                                           <td>M005</td>
                                           <td>100</td>
                                           <td>10/06/2019</td>
+                                          <td><a href="#">Edit</a></td>
                                         </tr>
                                       </tbody>
                                     </table>
                                   </div>
                                 </div>
-                                <div class="tab-pane fade" role="tabpanel" id="recovered">
-                                      <div class="alert alert-secondary">No more recovered
+                                <div class="tab-pane fade" role="tabpanel" id="Old">
+                                      <div class="alert alert-secondary" role="alert">No more recovered
                                       </div>
                                 </div>
                                 <div class="tab-pane fade" role="tabpanel" id="unrecoverable">
-                                      <div class="alert alert-secondary">Unrecoverable
+                                      <div class="alert alert-secondary" role="alert">Unrecoverable
                                       </div>
                                 </div>
                           </div>
@@ -765,6 +1921,7 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/Chart.min.js"></script>
         <script src="js/script.js"></script>
   </body>
 </html>

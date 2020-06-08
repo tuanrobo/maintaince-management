@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vending Machine Screen</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/Chart.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="d-flex flex-column">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between my-3">
+        <div class="btn-group">
+          <button class="btn btn-secondary active">Technician Board</button>
+          <button class="btn btn-secondary">Filling Board</button>
+        </div>
+        <button class="btn btn-secondary"><i class="fas fa-power-off"></i>
+        </button>
+      </div><a href="#">
+            <div class="alert alert-danger" role="alert">
+              <div class="media"><i class="fas fa-exclamation-triangle display-4 mr-3"></i>
+                <div class="media-body">
+                  <h5 class="alert-heading">An Issue Found!</h5>
+                  <p class="mb-0">VM detected a new issue needs investigating</p>
+                </div>
+              </div>
+            </div></a>
+      <div class="card mb-3">
+        <div class="card-header d-flex justify-content-between">
+          <h6 class="mb-0">Machine Info</h6><span class="text-muted">App version: 3.11.0</span>
+        </div>
+        <div class="card-body">
+          <dl class="row">
+            <dt class="col-5">Connection</dt>
+            <dd class="col-7"> <i class="fas fa-check-circle text-success mr-3"></i>Good
+            </dd>
+            <dt class="col-5">Connection</dt>
+            <dd class="col-7"> <i class="fas fa-check-circle text-success mr-3"></i>Good				
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-header d-flex align-items-center">
+          <h6 class="mb-0">Ticket Open</h6><span class="badge badge-pill badge-primary ml-2">2</span>
+        </div>
+        <div class="card-body p-0">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab" aria-controls="home">
+              <div class="row">
+                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Note Jams</strong><br><small class="text-muted"> 
+                    <div class="badge badge-light text-uppercase">Note Paid into Stacker at Power Up</div></small></div>
+                <div class="col-lg-1">
+                  <div class="badge badge-danger">HIGHT						</div>
+                </div>
+                <div class="col-lg-4"><span>Time detected</span><br><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                  <button class="btn btn-primary d-block mx-2" type="button" data-toggle="modal" data-target="#createTicketModal">Complete</button>
+                  <button class="btn btn-primary d-block mx-2" type="button" data-toggle="modal" data-target="#createTicketModal">Pending</button>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item list-group-item-action" data-toggle="list" href="#undefined" role="tab" aria-controls="home" onclick="openNav()">
+              <div class="row">
+                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Note Jams</strong><br><small class="text-muted"> 
+                    <div class="badge badge-light text-uppercase">Note Paid into Stacker at Power Up</div></small></div>
+                <div class="col-lg-1">
+                  <div class="badge badge-danger">HIGHT						</div>
+                </div>
+                <div class="col-lg-4"><span>Time detected</span><br><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                  <button class="btn btn-primary d-block mx-2" type="button" data-toggle="modal" data-target="#createTicketModal">Take Task					</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-header">
+          <h6 class="mb-0">Last Maintenance </h6>
+        </div>
+        <div class="card-body p-0">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab" aria-controls="home">
+              <div class="row">
+                <div class="col-lg-3 mb-3 mb-lg-0"><small class="text-muted">ID:270520EC01CM001</small><br><strong class="text-danger">Note Jams</strong><br><small class="text-muted"> 
+                    <div class="badge badge-light text-uppercase">Note Paid into Stacker at Power Up</div></small></div>
+                <div class="col-lg-1">
+                  <div class="badge badge-danger">HIGHT						</div>
+                </div>
+                <div class="col-lg-4"><span>Time detected</span><br><small class="text-muted">16:34PM - 20/06/2020</small></div>
+                <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                  <button class="btn btn-secondary d-block mx-2" type="button" data-toggle="modal" data-target="#createTicketModal">Re-Open</button>
+                  <button class="btn btn-light d-block mx-2" type="button" data-toggle="modal" data-target="#createTicketModal" disabled>Completed</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex bd-highlight mb-3 fixed-bottom">
+        <div class="flex-fill bd-highlight p-2">
+          <button class="btn btn-lg btn-primary btn-block">Repair / Replacement</button>
+        </div>
+        <div class="flex-fill bd-highlight p-2">
+          <button class="btn btn-lg btn-primary btn-block">Maintenance</button>
+        </div>
+      </div>
+    </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Chart.min.js"></script>
+        <script src="js/script.js"></script>
+  </body>
+</html>
