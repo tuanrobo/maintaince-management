@@ -42,16 +42,18 @@ $(".btn-group > .btn").click(function(){
     $(this).addClass("active");
 });
 
+
 /* Set the width of the side navigation to 250px */
 var ele = document.getElementById("showSidebar");
 function openNav() {
     ele.style.display = "block";
-    ele.classList.add('sidebar-sticky')    
+    // ele.classList.add('sidebar-sticky')
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
 
   /* Set the width of the side navigation to 0 */
   function closeNav() {
-    ele.style.display = "none";    
+    ele.style.display = "none";
+    // ele.classList.remove('sidebar-sticky');
     document.body.style.backgroundColor = "transparent";
   }
